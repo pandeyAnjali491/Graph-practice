@@ -10,13 +10,11 @@ public class iceSkating {
             edge[i][1] = sc.nextInt()-1;
             m = Math.max(m,Math.max(edge[i][0], edge[i][1]));
         }
-        int list[] = new int[m+1];
-        Arrays.fill(list,-1);
+        int coor[][] = new int[m+1][m+1];
         for (int i = 0; i < n; i++) {
             int u = edge[i][0];
             int v = edge[i][1];
-            list[u] = v;
-            list[v] = u;
+            coor[u][v] = 1;
         }
         int vis[][] = new int[m+1][m+1];
         int count = 0;
@@ -34,25 +32,25 @@ public class iceSkating {
                     vis[u][v] = 1;
                     // right
                     for(int k=u+1;k<=m;k++){
-                        if(list[v]==k && vis[k][v]==0){
+                        if(coor[k][v]==1 && vis[k][v]==0){
                             q.offer(new int[]{k,v});
                         }
                     }
                     // left
                     for(int k=u-1;k>=0;k--){
-                        if(list[v]==k && vis[k][v]==0){
+                        if(coor[k][v]==1 && vis[k][v]==0){
                             q.offer(new int[]{k,v});
                         }
                     }
                     // up
                     for(int k=v-1;k>=0;k--){
-                        if(list[u]==k && vis[u][k]==0){
+                        if(coor[u][k]==1 && vis[u][k]==0){
                             q.offer(new int[]{u,k});
                         }
                     }
                     // down
                     for(int k=v+1;k<=m;k++){
-                        if(list[u]==k && vis[u][k]==0){
+                        if(coor[u][k]==1 && vis[u][k]==0){
                             q.offer(new int[]{u,k});
                         }
                     }
