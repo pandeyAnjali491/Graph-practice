@@ -1,9 +1,11 @@
 import java.util.*;
-public class cycledirbfs {
+public class kahnsAlgo {
     class Solution {
+        // kahn's algorithm
     public boolean isCyclic(int V, int[][] edges) {
         // code here
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+        // indeg array
         HashMap<Integer,Integer> dg = new HashMap<>();
         for(int i=0;i<V;i++){
             adj.add(new ArrayList<>());

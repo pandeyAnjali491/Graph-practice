@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
-public class cycleindir {
-    class Solution {
+public class directedCycle {
     public boolean isCyclic(int V, int[][] edges) {
         // code here
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
@@ -40,5 +39,4 @@ public class cycleindir {
         }
         return false;
     }
-}
 }
