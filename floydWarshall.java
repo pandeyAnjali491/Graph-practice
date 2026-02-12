@@ -1,4 +1,5 @@
 public class floydWarshall {
+    // we first add all the direct edges weight in the dis array
     public void floydwarshall(int[][] dist) {
         // Code here
         int m = dist.length;
